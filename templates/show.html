@@ -1,0 +1,10 @@
+{% extends 'base.html'%} {%block content%}
+
+<h1>The bootcamp {{bootcamp.name}} is located in {{bootcamp.location}}</h1>
+
+<a href="{{url_for('index')}}">See all bootcamps</a>
+
+<br>
+
+<a href="{{url_for('edit', id=bootcamp.id)}}">Edit Bootcamp</a>
+{%endblock%}

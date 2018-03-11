@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<ul id="bootcamp">
+    {%for bootcamp in bootcamps%}
+    <li id="{{bootcamp.id}}">
+        <a href="{{url_for('show', id=bootcamp.id)}}">{{bootcamp.name}} {{bootcamp.location}}</a>
+        <i class='far fa-trash-alt'></i>
+        <button class='increment'>+</button>
+        <button class='decrement'>-</button>
+        <span>{{bootcamp.votes}}</span>
+    </li>
+    {%endfor%}
+</ul>
+
+<div>
+    <form action="{{url_for('new')}}">
+        <input type="submit" value="create a new bootcamp">
+    </form>
+</div>
+
+{%endblock%}!
